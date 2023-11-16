@@ -1,13 +1,12 @@
-
 const express = require('express');
 const router = express.Router();
 const connection = require('../server')
 
-// Define routes for Employee
-router.get('/employees', (req, res)=> {
-    console.log('employees');
+// Define routes for Customer
+router.get('/products', (req, res)=> {
+    console.log('products');
     connection.execute({
-        sqlText: 'select * from employee',
+        sqlText: 'select * from product',
         complete: (err, stmt, rows) => {
             if (err) {
                 console.error('Unable to retrieve order data', err);
@@ -19,11 +18,12 @@ router.get('/employees', (req, res)=> {
     });
 });
 
+
 router.get('/:id', (req, res) => {
     const id = req.params.id;
     console.log('id: ' + id);
     connection.execute({
-        sqlText: 'select * from employee where employee_id = :1',
+        sqlText: 'select * from product where id = :1',
         binds: [id],
         complete: (err, stmt, rows) => {
             if (err) {
@@ -35,8 +35,5 @@ router.get('/:id', (req, res) => {
         },
     });
 });
-
-
-// Define other routes for CRUD operations...
 
 module.exports = router;

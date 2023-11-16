@@ -1,13 +1,12 @@
-
 const express = require('express');
 const router = express.Router();
 const connection = require('../server')
 
 // Define routes for Employee
-router.get('/employees', (req, res)=> {
-    console.log('employees');
+router.get('/orders', (req, res)=> {
+    console.log('/orders');
     connection.execute({
-        sqlText: 'select * from employee',
+        sqlText: 'select * from order_detail',
         complete: (err, stmt, rows) => {
             if (err) {
                 console.error('Unable to retrieve order data', err);
@@ -19,12 +18,12 @@ router.get('/employees', (req, res)=> {
     });
 });
 
-router.get('/:id', (req, res) => {
-    const id = req.params.id;
-    console.log('id: ' + id);
+router.get('/:order_id', (req, res) => {
+    const order_id = req.params.order_id;
+    console.log('id: ' + order_id);
     connection.execute({
-        sqlText: 'select * from employee where employee_id = :1',
-        binds: [id],
+        sqlText: 'select * from order_detail where order_id = :1',
+        binds: [order_id],
         complete: (err, stmt, rows) => {
             if (err) {
                 console.error('Unable to retrieve order data', err);
@@ -35,7 +34,6 @@ router.get('/:id', (req, res) => {
         },
     });
 });
-
 
 // Define other routes for CRUD operations...
 
