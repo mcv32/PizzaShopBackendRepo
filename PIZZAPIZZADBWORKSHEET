@@ -18,17 +18,17 @@ DROP TABLE CUSTOMER;
 
 CREATE  TABLE CUSTOMER(
     PHONE_NUMBER VARCHAR(10) PRIMARY KEY,
-    ZIP_CODE VARCHAR(6),
+    ZIP_CODE VARCHAR(5),
     CITY VARCHAR(64),
     STATE VARCHAR(2),
     ST_ADDRESS VARCHAR (64)
 );
 
 INSERT INTO CUSTOMER VALUES
-(9758750309, 079222, 'Berkerly Heights', 'NJ', '100 Connel Drive'),
-(9098750459, 079222, 'Berkerly Heights', 'NJ', '100 Connel Drive'),
-(9378750852, 079222, 'Berkerly Heights', 'NJ', '100 Connel Drive'),
-(9888750462, 079222, 'Berkerly Heights', 'NJ', '100 Connel Drive'),
+(9758750309, 07922, 'Berkeley Heights', 'NJ', '100 Connel Drive'),
+(9098750459, 07922, 'Berkeley Heights', 'NJ', '100 Connel Drive'),
+(9378750852, 07922, 'Berkeley Heights', 'NJ', '100 Connel Drive'),
+(9888750462, 07922, 'Berkeley Heights', 'NJ', '100 Connel Drive'),
 (9738231107, 07416, 'Franklin Boro', 'NJ', '3599 Hilltop Haven Drive'),
 (9082611049,07071,'Lyndhurst','NJ','4160 Williams Mine Road'),
 (9733145094,08854,'Piscataway','NJ','467 Drummond Street'),
