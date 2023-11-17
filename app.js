@@ -1,5 +1,7 @@
 const express = require('express');
 var connection = require('./server.js');
+var utils = require('./utils')
+
 const app = express();
 
 // Start the server
